@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Rick the Pick</title>
+	
+	<!--[if le IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="scripts/respond.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- <link href='http://fonts.googleapis.com/css?family=Righteous|Nova+Square' rel='stylesheet' type='text/css'> -->
+	  <link href="styles/normalize.css" rel="stylesheet" type="text/css">
+    <!-- <link href="styles/app.css" rel="stylesheet" type="text/css"> -->
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
+    <link href="styles/rick.css" rel="stylesheet" type="text/css">
+    <link href="styles/pick.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script type="text/javascript" src="scripts/polyfill.js"></script>
+	
+</head>
+<body>
+  <div class="wrapper">
+    <div class="jumbotron">
+      <h1>Rick the Pick</h1>
+      <p class="lead">
+      The Audio is being sampled live. <br> To store a sound press (s).  ∆  
+      To select the label / pattern to train press (0-9).<br>  ∆  
+      To run DTW against the current signal for all labels, press (c).  ∆  
+      </p>
+      <div>
+        <label for="visual">Visualizer</label>
+        <select type="radio" id="visual" name="visual">
+          <option value="sinewave" >Sinewave</option>
+          <option value="frequencybars" selected >FFT</option>
+        </select>
+        <select type="radio" id="looper" name="looper">
+          <option value="-1" selected>none</option>
+          <option value="1">1s</option>
+          <option value="2" >2s</option>
+          <option value="4" >4s</option>
+        </select>
+        <select type="radio" id="fft_size" name="fft_size">
+          <option value="128" >128</option>
+          <option value="256">256</option>
+          <option value="512" selected>512</option>
+          <option value="1024" >1024</option>
+        </select>
+      </div>
+
+  
+
+    <canvas class="visualizer" width="740" height="450"></canvas> 
+    <div id="ml-labels">
+      <div class="ml-label">
+        <h5 class="ml-name"><p class="ml-value"></p></h5>
+        
+      </div>
+    </div>
+  </p>
+  </div>
+    <form class="controls" style="display: none;">
+      <div>
+        <label for="voice">Voice setting</label>
+        <select id="voice" name="voice">
+          <option value="distortion">Distortion</option>
+          <option value="convolver">Reverb</option>
+          <option value="biquad" selected>Bass Boost</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+      <div>
+        <label for="visual">Visualizer setting</label>
+        <select id="visual" name="visual">
+          <option value="sinewave" selected>Sinewave</option>
+          <option value="frequencybars" >Frequency bars</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+      <div>
+        <a class="mute">Mute</a>
+      </div>
+    </form>
+
+
+  </div>
+
+
+  <!-- The following element pulls in the script for the default template functionality -->
+    <script src="scripts/dtw.js"></script>
+    <script src="scripts/install.js"></script>  
+
+    <!-- Below is your custom application script -->
+
+    <script src="scripts/app.js"></script>
+	
+</body>
+</html>

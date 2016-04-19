@@ -1,0 +1,10 @@
+.ml-label{
+	float:left;
+	padding:25px;
+}
+.best{
+	color:green;
+}
+.selected{
+	background-color:rgba(0,0,0,.1);
+}
