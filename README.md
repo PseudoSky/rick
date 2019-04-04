@@ -1,5 +1,7 @@
 ## Rick the lock pick
 
+![screenshot](screenshot.png)
+
 A visual interface for training and recognizing audio patterns in real time.
 [Live Demo](https://s3-us-west-2.amazonaws.com/sky-k/rick/index.html)
 
